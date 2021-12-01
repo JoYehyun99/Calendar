@@ -5,6 +5,11 @@
     --today-color:#635658;
     --check-color:#987A7F;
 
+    --shadow-set:rgba(100,100,111,0.2) 0px 7px 29px 0px;
+
+    --red-color:#c22943;
+    --blue-color:#1a82be;
+
     --padding-size: 25px;
     --btn-padding-size:15px;
 
@@ -30,6 +35,7 @@
     padding:var(--padding-size);
     border-radius: 20px;
     background-color: var(--background-color);
+    box-shadow: var(--shadow-set);
 }
 
 .datePart{
@@ -45,6 +51,7 @@
     font-size: var(--title-font-size);
     color:var(--point-color);
     background-color: var(--text-color);
+    text-transform: uppercase;
     text-align: center;
     width: 100%;
     margin:20px;
@@ -53,20 +60,22 @@
 .bigDate{
     font-weight: bold;
     font-size: var(--largest-font-size);
+    color:var(--text-color);
 }
 
 .calendarPart{
-    padding: var(--padding-size);
+    padding: 15px;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .changeMonth{
     width: 100%;
-    margin:15px;
+    margin:0px 0px 18px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,7 +89,7 @@
     font-weight: bold;
     border-radius: 50%;
     background-color: var(--point-color);
-    color:var(--text-color);
+    color:var(--background-color);
 }
 
 #monthNyear{
@@ -91,10 +100,26 @@
 
 #calendar{
     width: 100%;
-    height: 100%;
+    height: auto;
     text-align: center;
     table-layout: fixed;
     color:var(--text-color);
+}
+
+th {
+    height: 25px;
+}
+
+td {
+    height: 38px;
+}
+
+#sunday {
+    color:var(--red-color);
+}
+
+#saturday{
+    color:var(--blue-color);
 }
 
 #calendar #week{
@@ -107,7 +132,7 @@
     border-radius: 50%;
 }
 
-#calendar #checkday{
+#calendar .checkday{
     background-color: var(--check-color);
     border-radius: 50%;
 }
